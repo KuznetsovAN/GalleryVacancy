@@ -1,0 +1,39 @@
+<div class="row"><a href="/" class="btn btn-default col-md-offset-1">Назад</a></div>
+
+<div class="row ">
+    <div class=" col-md-7 col-md-offset-2  col-sm-offset-2  thumbnail">
+        <img class="img-responsive img-thumbnail" src="{{dataItem.url}}" />
+    </div>
+</div>
+
+
+
+<div class="row">
+
+    <div class="col-md-10 col-md-offset-1  col-sm-offset-1">
+        <div class="author"> Автор <input type="text" ng-model="author"></div>
+        <div  text-angular ng-model="textComment" ng-model="htmlVariable"></div>
+
+        <button ng-click="addComment()">Сохранить/Добавить</button>
+        <button ng-click="cancelComment()">Отменить</button>
+
+
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-10 col-md-offset-1  col-sm-offset-1 ">
+        <table class="table table-striped comments ">
+            <tr>
+                <td>
+                    <div class="thumbnail" ng-repeat="item in dataItem.comments" ng-click="editComment($index)">
+                        <div>{{item.author}} {{item.date}}</div>
+                        <div>{{item.text}}</div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+

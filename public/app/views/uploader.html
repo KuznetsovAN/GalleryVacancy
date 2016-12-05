@@ -1,0 +1,23 @@
+<a href="/" class="btn btn-default col-md-offset-1">Вернуться</a>
+
+<div class="row ">
+    <div class=" col-md-7 col-md-offset-2  col-sm-offset-2  ">
+        <input class="btn btn-default" type="file" nv-file-select uploader="uploader" multiple/><br/>
+        <div class="row">
+            <div ng-repeat="item in uploader.queue" class="col-md-5 thumbnail ">
+
+
+                Имя файла: <span ng-bind="item.file.name"></span><br/>
+                <div ng-show="uploader.isHTML5" ng-thumb="{ file: item._file, height: 100 }"></div>
+                <div class="progress " style="margin-bottom: 0;">
+                    <div class="progress-bar " role="progressbar" ng-style="{ 'width': item.progress + '%' }"></div>
+                </div>
+                <div class="row" style="margin-top: 10px ">
+                    <button class="btn btn-default col-md-offset-1  col-sm-offset-1" ng-click="item.remove()">Отмена</button>
+                </div>
+            </div>
+        </div>
+
+        <button class="btn btn-default" ng-click="uploader.uploadAll()">Загрузить</button>
+    </div>
+</div>

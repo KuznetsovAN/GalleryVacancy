@@ -1,0 +1,10 @@
+
+<a href="#/uploader" class="btn btn-default col-md-offset-1" style="margin-bottom: 10px" >Загрузить</a>
+
+<div class="row col-md-offset-1 col-sm-offset-1 ">
+    <div class="col-xs-10 col-md-3 thumbnail  item" ng-repeat="item in list.items">
+        <span class="vote-up glyphicon glyphicon-remove btn del" ng-click="delDialog(item.id,$index)"></span>
+        <a href="#/item/{{item.id}}"><img class="img-responsive img-thumbnail" src="{{item.url}}" /></a>
+    </div>
+</div>
+<del-up-dialog></del-up-dialog>
